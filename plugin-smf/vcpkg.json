@@ -1,0 +1,1 @@
+{ "name": "hellblade-re", "version-string": "1.4.0", "dependencies": ["commonlibsse-ng", "fmt", "spdlog", "simpleini"] }

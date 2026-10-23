@@ -1,0 +1,3 @@
+		<hkobject name="#block$24" class="hkbExpressionCondition" signature="0x1c3c1045">
+			<hkparam name="expression">(iLeftHandType != 7) &amp;&amp; (iLeftHandType != 12) &amp;&amp; (HBTB_TimedBlock == 0)</hkparam>
+		</hkobject>
