@@ -1,0 +1,17 @@
+cmake_minimum_required(VERSION 3.23)
+project(HellbladeTimedBlock VERSION 1.4.0 LANGUAGES CXX)
+find_package(CommonLibSSE CONFIG REQUIRED)
+find_path(SIMPLEINI_INCLUDE_DIRS "SimpleIni.h")
+file(GLOB_RECURSE sources CONFIGURE_DEPENDS src/*.cpp)
+add_commonlibsse_plugin(${PROJECT_NAME} SOURCES ${sources})
+target_compile_features(${PROJECT_NAME} PRIVATE cxx_std_23)
+target_compile_definitions(${PROJECT_NAME} PRIVATE _UNICODE)
+target_precompile_headers(${PROJECT_NAME} PRIVATE include/pch.hpp)
+target_include_directories(${PROJECT_NAME} PRIVATE include src ${SIMPLEINI_INCLUDE_DIRS})
+# Vendored API headers are system headers so their warnings never trip /WX
+target_include_directories(${PROJECT_NAME} SYSTEM PRIVATE extern)
+if (MSVC)
+    # Upstream flags, /MP for MSVC only, and clang-cl must not fail on CommonLib's unused /Zc:preprocessor
+    target_compile_options(${PROJECT_NAME} PRIVATE /W4 /WX /O1 $<$<CXX_COMPILER_ID:MSVC>:/MP> $<$<CXX_COMPILER_ID:Clang>:-Wno-unused-command-line-argument>)
+    target_link_options(${PROJECT_NAME} PRIVATE /WX "$<$<NOT:$<CONFIG:Debug>>:/INCREMENTAL:NO;/OPT:REF>")
+endif ()

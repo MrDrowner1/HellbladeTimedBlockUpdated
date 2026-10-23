@@ -1,0 +1,198 @@
+{
+    "$schema": "https://raw.githubusercontent.com/Exit-9B/MCM-Helper/main/docs/config.schema.json",
+    "modName": "HellbladeTimedBlock",
+    "displayName": "Hellblade - Timed Block",
+    "cursorFillMode": "topToBottom",
+    "content": [
+        { 
+            "text": "$HB_TimedBlock_HeaderText", 
+            "type": "header" 
+        },
+        { 
+            "id": "bTimedBlockEnabled:Settings",
+            "text": "$HB_TimedBlockEnable_OptionText", 
+            "type": "toggle", 
+            "groupControl": 1,
+            "valueOptions": { 
+                "defaultValue": true,
+                "sourceType": "ModSettingBool"
+            }
+        },
+        { 
+            "id": "fTimedBlockWindow:Settings",
+            "text": "$HB_TimedBlockWindow_OptionText",
+            "type": "slider",
+            "groupCondition": 1,
+            "help": "$HB_TimedBlockWindow_InfoText",
+            "valueOptions": {
+                "min": 0.1,
+                "max": 2.0,
+                "step": 0.1,
+                "defaultValue": 0.2,
+                "formatString": "{2} Seconds",
+                "sourceType": "ModSettingFloat"
+            }
+        },
+        {
+            "id": "fTimedBlockSlowdownDuration:Settings",
+            "text": "$HB_TimedBlockSlowdownDuration_OptionText",
+            "type": "slider",
+            "groupCondition": 1,
+            "help": "$HB_TimedBlockSlowdownDuration_InfoText",
+            "valueOptions": {
+                "min": 0.3,
+                "max": 1.0,
+                "step": 0.1,
+                "defaultValue": 0.6,
+                "formatString": "{2} Seconds",
+                "sourceType": "ModSettingFloat"
+            }
+        },
+        {
+            "id": "fTimedBlockSlowdownMult:Settings",
+            "text": "Time Scale",
+            "type": "slider",
+            "groupCondition": 1,
+            "help": "How fast time runs at the peak of the slowdown after a timed block, 1.0 is normal speed.",
+            "valueOptions": {
+                "min": 0.1,
+                "max": 1.0,
+                "step": 0.05,
+                "defaultValue": 0.6,
+                "formatString": "{2}",
+                "sourceType": "ModSettingFloat"
+            }
+        },
+        { 
+            "text": "$HB_PerfectBlock_HeaderText", 
+            "type": "header",
+            "position": 1
+        },
+        { 
+            "id": "bPerfectBlockEnabled:Settings",
+            "text": "$HB_PerfectBlockEnable_OptionText", 
+            "type": "toggle", 
+            "groupControl": 2,
+            "valueOptions": { 
+                "defaultValue": true,
+                "sourceType": "ModSettingBool"
+            }
+        },
+        { 
+            "id": "fPerfectBlockWindow:Settings",
+            "text": "$HB_PerfectBlockWindow_OptionText",
+            "type": "slider",
+            "groupCondition": 2,
+            "help": "$HB_PerfectBlockWindow_InfoText",
+            "valueOptions": {
+                "min": 0.05,
+                "max": 1.0,
+                "step": 0.05,
+                "defaultValue": 0.05,
+                "formatString": "{2} Seconds",
+                "sourceType": "ModSettingFloat"
+            }
+        },
+        {
+            "id": "fPerfectBlockSlowdownDuration:Settings",
+            "text": "$HB_PerfectBlockSlowdownDuration_OptionText",
+            "type": "slider",
+            "groupCondition": 2,
+            "help": "$HB_PerfectBlockSlowdownDuration_InfoText",
+            "valueOptions": {
+                "min": 1.0,
+                "max": 3.0,
+                "step": 0.1,
+                "defaultValue": 1.2,
+                "formatString": "{2} Seconds",
+                "sourceType": "ModSettingFloat"
+            }
+        },
+        {
+            "id": "fPerfectBlockSlowdownMult:Settings",
+            "text": "Time Scale",
+            "type": "slider",
+            "groupCondition": 2,
+            "help": "How fast time runs at the peak of the slowdown after a perfect block, 1.0 is normal speed.",
+            "valueOptions": {
+                "min": 0.1,
+                "max": 1.0,
+                "step": 0.05,
+                "defaultValue": 0.4,
+                "formatString": "{2}",
+                "sourceType": "ModSettingFloat"
+            }
+        },
+        {
+            "type": "empty"
+        },
+        {
+            "id": "bPerfectBlockDamageMultEnabled:Settings",
+            "text": "$HB_PerfectBlockDamageMultEnabled_OptionText",
+            "type": "toggle",
+            "groupControl": 3,
+            "groupCondition": 2,
+            "help": "$HB_PerfectBlockDamageMultEnabled_InfoText",
+            "valueOptions": { 
+                "defaultValue": true,
+                "sourceType": "ModSettingBool"
+            }
+        },
+        {
+            "id": "iPerfectBlockDamageMultDuration:Settings",
+            "text": "$HB_PerfectBlockDamageMultDuration_OptionText",
+            "type": "slider",
+            "groupCondition": {
+                "AND": [2, 3]
+            },
+            "help": "$HB_PerfectBlockDamageMultDuration_InfoText",
+            "valueOptions": {
+                "min": 1,
+                "max": 6,
+                "step": 1,
+                "defaultValue": 4,
+                "formatString": "{0} Seconds",
+                "sourceType": "ModSettingInt"
+            }
+        },
+        {
+            "id": "fPerfectBlockDamageMult:Settings",
+            "text": "Damage Multiplier",
+            "type": "slider",
+            "groupCondition": {
+                "AND": [2, 3]
+            },
+            "help": "How many times the player's attack damage is multiplied while the boost lasts.",
+            "valueOptions": {
+                "min": 1.0,
+                "max": 5.0,
+                "step": 0.1,
+                "defaultValue": 2.0,
+                "formatString": "{1}x",
+                "sourceType": "ModSettingFloat"
+            }
+        },
+        {
+            "type": "empty"
+        },
+        { 
+            "text": "$HB_Misc_HeaderText", 
+            "type": "header" 
+        },
+        { 
+            "id": "fCooldownTime:Settings",
+            "text": "$HB_MiscCooldown_OptionText",
+            "type": "slider",
+            "groupCondition": 2,
+            "help": "$HB_MiscCooldown_InfoText",
+            "valueOptions": {
+                "min": 0.0,
+                "max": 1.0,
+                "step": 0.05,
+                "defaultValue": 0.0,
+                "formatString": "{2} Seconds",
+                "sourceType": "ModSettingFloat"
+            }
+        }
+    ]
+}
