@@ -5,12 +5,12 @@
     "cursorFillMode": "topToBottom",
     "content": [
         { 
-            "text": "$HB_TimedBlock_HeaderText", 
+            "text": "Timed Block Options", 
             "type": "header" 
         },
         { 
             "id": "bTimedBlockEnabled:Settings",
-            "text": "$HB_TimedBlockEnable_OptionText", 
+            "text": "Enable Timed Block", 
             "type": "toggle", 
             "groupControl": 1,
             "valueOptions": { 
@@ -20,10 +20,10 @@
         },
         { 
             "id": "fTimedBlockWindow:Settings",
-            "text": "$HB_TimedBlockWindow_OptionText",
+            "text": "Time Window",
             "type": "slider",
             "groupCondition": 1,
-            "help": "$HB_TimedBlockWindow_InfoText",
+            "help": "The maximum length of time, after raising a shield or weapon, that the player is able to perform a timed block.",
             "valueOptions": {
                 "min": 0.1,
                 "max": 2.0,
@@ -35,10 +35,10 @@
         },
         {
             "id": "fTimedBlockSlowdownDuration:Settings",
-            "text": "$HB_TimedBlockSlowdownDuration_OptionText",
+            "text": "Duration",
             "type": "slider",
             "groupCondition": 1,
-            "help": "$HB_TimedBlockSlowdownDuration_InfoText",
+            "help": "The duration of the slowed time following a successful timed block.",
             "valueOptions": {
                 "min": 0.3,
                 "max": 1.0,
@@ -64,13 +64,13 @@
             }
         },
         { 
-            "text": "$HB_PerfectBlock_HeaderText", 
+            "text": "Perfect Block Options", 
             "type": "header",
             "position": 1
         },
         { 
             "id": "bPerfectBlockEnabled:Settings",
-            "text": "$HB_PerfectBlockEnable_OptionText", 
+            "text": "Enable Perfect Block", 
             "type": "toggle", 
             "groupControl": 2,
             "valueOptions": { 
@@ -80,10 +80,10 @@
         },
         { 
             "id": "fPerfectBlockWindow:Settings",
-            "text": "$HB_PerfectBlockWindow_OptionText",
+            "text": "Time Window",
             "type": "slider",
             "groupCondition": 2,
-            "help": "$HB_PerfectBlockWindow_InfoText",
+            "help": "The maximum length of time, after raising a shield or weapon, that the player is able to perform a perfect block.",
             "valueOptions": {
                 "min": 0.05,
                 "max": 1.0,
@@ -95,10 +95,10 @@
         },
         {
             "id": "fPerfectBlockSlowdownDuration:Settings",
-            "text": "$HB_PerfectBlockSlowdownDuration_OptionText",
+            "text": "Duration",
             "type": "slider",
             "groupCondition": 2,
-            "help": "$HB_PerfectBlockSlowdownDuration_InfoText",
+            "help": "The duration of the slowed time following a successful perfect block.",
             "valueOptions": {
                 "min": 1.0,
                 "max": 3.0,
@@ -128,11 +128,11 @@
         },
         {
             "id": "bPerfectBlockDamageMultEnabled:Settings",
-            "text": "$HB_PerfectBlockDamageMultEnabled_OptionText",
+            "text": "Enable Damage Multiplier",
             "type": "toggle",
             "groupControl": 3,
             "groupCondition": 2,
-            "help": "$HB_PerfectBlockDamageMultEnabled_InfoText",
+            "help": "Weapon damage will be increased for a period of time after performing a perfect block.",
             "valueOptions": { 
                 "defaultValue": true,
                 "sourceType": "ModSettingBool"
@@ -140,12 +140,12 @@
         },
         {
             "id": "iPerfectBlockDamageMultDuration:Settings",
-            "text": "$HB_PerfectBlockDamageMultDuration_OptionText",
+            "text": "Multiplier Duration",
             "type": "slider",
             "groupCondition": {
                 "AND": [2, 3]
             },
-            "help": "$HB_PerfectBlockDamageMultDuration_InfoText",
+            "help": "The length of time that the players attack damage will be increased for.",
             "valueOptions": {
                 "min": 1,
                 "max": 6,
@@ -176,15 +176,15 @@
             "type": "empty"
         },
         { 
-            "text": "$HB_Misc_HeaderText", 
+            "text": "Miscellaneous", 
             "type": "header" 
         },
         { 
             "id": "fCooldownTime:Settings",
-            "text": "$HB_MiscCooldown_OptionText",
+            "text": "Cooldown Time",
             "type": "slider",
             "groupCondition": 2,
-            "help": "$HB_MiscCooldown_InfoText",
+            "help": "The amount of time that has to pass before another timed block can be performed.",
             "valueOptions": {
                 "min": 0.0,
                 "max": 1.0,
