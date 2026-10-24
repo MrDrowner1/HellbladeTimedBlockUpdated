@@ -1,7 +1,7 @@
 # Hellblade - Timed Block - 1.7 Support
 
 A fork of [Hellblade - Timed Block - AE Support](https://www.nexusmods.com/skyrimspecialedition/mods/87645)
-(source: [moon_river/hellbladere](https://gitlab.com/moon_river/hellbladere)) for Skyrim SE/AE 1.6.1130+ / 1.7.x, built on
+(source: [moon_river/hellbladere](https://gitlab.com/moon_river/hellbladere)) for Skyrim SE/AE up to 1.7.x, built on
 CommonLibSSE-NG. Two versions to chose from: classic MCM menu version, or SKSE Menu Framework version.
 
 | Version | Settings menu | Source |
