@@ -197,8 +197,13 @@ bool BlockHandler::TryBlockInternal(RE::Actor* attacker, RE::Actor* target, cons
 
         SKSE::GetTaskInterface()->AddTask([target, isInPerfectBlockWindow, isWeaponBlock]() {
             Util::TryPlaySoundAt(target, isWeaponBlock ? Forms::HB_TimedBlock01SD : Forms::HB_TimedBlock02SD, 0.9f);
-            if (isInPerfectBlockWindow)
-                Util::TryPlaySoundAt(target, Forms::HB_PerfectBlockSD);
+            // Fork: timed_block.wav (HB_TimedBlockSD) was unused since AE Support, a perfect block keeps its own cue
+            if (isInPerfectBlockWindow) {
+                if (Settings::bPerfectBlockSoundEnabled)
+                    Util::TryPlaySoundAt(target, Forms::HB_PerfectBlockSD);
+            } else if (Settings::bTimedBlockSoundEnabled) {
+                Util::TryPlaySoundAt(target, Forms::HB_TimedBlockSD);
+            }
         });
 
         // 1.3.5.1: kPowerAttack is no longer set on hitData.attackData, it's shared by every actor of the race (player too) and made light attacks cost power-attack stamina

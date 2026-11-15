@@ -43,6 +43,8 @@ namespace {
             "The duration of the slowed time following a successful timed block.");
         commit |= Slider("Time Scale##timed", Settings::fTimedBlockSlowdownMult, 0.1f, 1.0f, "%.2f",
             "How fast time runs at the peak of the slowdown after a timed block, 1.0 is normal speed.");
+        commit |= Checkbox("Timed Block Sound", &Settings::bTimedBlockSoundEnabled);
+        Help("Play an extra sound on a timed block. A perfect block plays its own sound instead.");
         EndDisabled();
 
         SeparatorText("Perfect Block Options");
@@ -54,6 +56,8 @@ namespace {
             "The duration of the slowed time following a successful perfect block.");
         commit |= Slider("Time Scale##perfect", Settings::fPerfectBlockSlowdownMult, 0.1f, 1.0f, "%.2f",
             "How fast time runs at the peak of the slowdown after a perfect block, 1.0 is normal speed.");
+        commit |= Checkbox("Perfect Block Sound", &Settings::bPerfectBlockSoundEnabled);
+        Help("Play an extra sound on a perfect block.");
         commit |= Checkbox("Enable Damage Multiplier", &Settings::bPerfectBlockDamageMultEnabled);
         Help("Weapon damage will be increased for a period of time after performing a perfect block.");
         BeginDisabled(!Settings::bPerfectBlockDamageMultEnabled);

@@ -27,6 +27,7 @@ void Settings::ReadSettings() {
         ReadSettingFloat(ini, "Settings", "fTimedBlockSlowdownDuration", fTimedBlockSlowdownDuration);
         ReadSettingFloat(ini, "Settings", "fTimedBlockSlowdownMult", fTimedBlockSlowdownMult);
         ReadSettingFloat(ini, "Settings", "fTimedBlockWindow", fTimedBlockWindow);
+        ReadSettingBool(ini, "Settings", "bTimedBlockSoundEnabled", bTimedBlockSoundEnabled);
 
         Util::LimitLower(fTimedBlockSlowdownDuration, 0.f);
         Util::LimitLower(fTimedBlockSlowdownMult, 0.1f);
@@ -37,6 +38,7 @@ void Settings::ReadSettings() {
         ReadSettingFloat(ini, "Settings", "fPerfectBlockSlowdownDuration", fPerfectBlockSlowdownDuration);
         ReadSettingFloat(ini, "Settings", "fPerfectBlockSlowdownMult", fPerfectBlockSlowdownMult);
         ReadSettingFloat(ini, "Settings", "fPerfectBlockWindow", fPerfectBlockWindow);
+        ReadSettingBool(ini, "Settings", "bPerfectBlockSoundEnabled", bPerfectBlockSoundEnabled);
         
         Util::LimitLower(fPerfectBlockSlowdownDuration, 0.f);
         Util::LimitLower(fPerfectBlockSlowdownMult, 0.1f);
@@ -68,10 +70,12 @@ void Settings::Save() {
     ini.SetDoubleValue("Settings", "fTimedBlockWindow", fTimedBlockWindow);
     ini.SetDoubleValue("Settings", "fTimedBlockSlowdownDuration", fTimedBlockSlowdownDuration);
     ini.SetDoubleValue("Settings", "fTimedBlockSlowdownMult", fTimedBlockSlowdownMult);
+    ini.SetBoolValue("Settings", "bTimedBlockSoundEnabled", bTimedBlockSoundEnabled);
     ini.SetBoolValue("Settings", "bPerfectBlockEnabled", bPerfectBlockEnabled);
     ini.SetDoubleValue("Settings", "fPerfectBlockWindow", fPerfectBlockWindow);
     ini.SetDoubleValue("Settings", "fPerfectBlockSlowdownDuration", fPerfectBlockSlowdownDuration);
     ini.SetDoubleValue("Settings", "fPerfectBlockSlowdownMult", fPerfectBlockSlowdownMult);
+    ini.SetBoolValue("Settings", "bPerfectBlockSoundEnabled", bPerfectBlockSoundEnabled);
     ini.SetBoolValue("Settings", "bPerfectBlockDamageMultEnabled", bPerfectBlockDamageMultEnabled);
     ini.SetLongValue("Settings", "iPerfectBlockDamageMultDuration", static_cast<long>(iPerfectBlockDamageMultDuration));
     ini.SetDoubleValue("Settings", "fPerfectBlockDamageMult", fPerfectBlockDamageMult);
@@ -89,10 +93,12 @@ void Settings::ResetToDefaults() {
     fTimedBlockWindow = 0.2f;
     fTimedBlockSlowdownDuration = 0.6f;
     fTimedBlockSlowdownMult = 0.6f;
+    bTimedBlockSoundEnabled = true;
     bPerfectBlockEnabled = true;
     fPerfectBlockWindow = 0.05f;
     fPerfectBlockSlowdownDuration = 1.2f;
     fPerfectBlockSlowdownMult = 0.4f;
+    bPerfectBlockSoundEnabled = true;
     bPerfectBlockDamageMultEnabled = true;
     iPerfectBlockDamageMultDuration = 4;
     fPerfectBlockDamageMult = 2.f;

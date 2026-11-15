@@ -21,6 +21,8 @@ CommonLibSSE-NG. Two versions to chose from: classic MCM menu version, or SKSE M
 - **Stability fixes.** Null checks on a few game objects, an earlier re-entrancy check, and a lazy delta-time lookup.
 - **Configurable damage multiplier.** The ESP's perfect-block damage boost adds 1 to `AttackDamageMult` (2x damage).
   The new `fPerfectBlockDamageMult` setting sets that boost in memory.
+- **Timed block sound.** A timed block plays `timed_block.wav` from the AE Support ESP again, which went unused there.
+  A perfect block keeps its own sound. Each can be turned off with `bTimedBlockSoundEnabled` and `bPerfectBlockSoundEnabled`.
 - **Configurable slowdown strength.** `fTimedBlockSlowdownMult` and `fPerfectBlockSlowdownMult` were unused in the AE Support
   ini. Now you can actually control the time slowdown during a block.
 

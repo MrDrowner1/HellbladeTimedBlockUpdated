@@ -10,11 +10,13 @@ struct Settings {
     static inline float fTimedBlockSlowdownDuration { 0.6f }; //0.7
     static inline float fTimedBlockSlowdownMult { 0.6f };
     static inline float fTimedBlockWindow { 0.2f };
+    static inline bool bTimedBlockSoundEnabled { true };
 
     static inline bool bPerfectBlockEnabled { true };
     static inline float fPerfectBlockSlowdownDuration { 1.2f };
     static inline float fPerfectBlockSlowdownMult { 0.4f };
     static inline float fPerfectBlockWindow { 0.05f };
+    static inline bool bPerfectBlockSoundEnabled { true };
 
     static inline bool bPerfectBlockDamageMultEnabled { true };
     static inline unsigned int iPerfectBlockDamageMultDuration { 4 };

@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.23)
-project(HellbladeTimedBlock VERSION 1.4.0 LANGUAGES CXX)
+project(HellbladeTimedBlock VERSION 1.4.1 LANGUAGES CXX)
 find_package(CommonLibSSE CONFIG REQUIRED)
 find_path(SIMPLEINI_INCLUDE_DIRS "SimpleIni.h")
 file(GLOB_RECURSE sources CONFIGURE_DEPENDS src/*.cpp)

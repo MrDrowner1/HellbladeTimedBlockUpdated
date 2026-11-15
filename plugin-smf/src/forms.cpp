@@ -19,6 +19,7 @@ void Forms::Load() {
 
     constexpr const std::string_view PLUGIN_NAME = "HellbladeTimedBlock.esp"sv;
     HB_DamageBoostEnabled = dataHandler->LookupForm<RE::TESGlobal>(0x808, PLUGIN_NAME);
+    HB_TimedBlockSD = dataHandler->LookupForm<RE::BGSSoundDescriptorForm>(0x801, PLUGIN_NAME);
     HB_TimedBlock01SD = dataHandler->LookupForm<RE::BGSSoundDescriptorForm>(0x80C, PLUGIN_NAME);
     HB_TimedBlock02SD = dataHandler->LookupForm<RE::BGSSoundDescriptorForm>(0x80D, PLUGIN_NAME);
     HB_PerfectBlockSD = dataHandler->LookupForm<RE::BGSSoundDescriptorForm>(0x804, PLUGIN_NAME);
@@ -28,7 +29,7 @@ void Forms::Load() {
     // HB_StaggerCooldownSpell = dataHandler->LookupForm<RE::SpellItem>(0x80A, PLUGIN_NAME);
 
     std::vector<RE::TESForm*> forms { 
-        HB_DamageBoostEnabled, HB_TimedBlock01SD, HB_TimedBlock02SD, HB_PerfectBlockSD, HB_DamageBoostEffect, HB_PerfectBlockEffect, HB_PerfectBlockSpell 
+        HB_DamageBoostEnabled, HB_TimedBlockSD, HB_TimedBlock01SD, HB_TimedBlock02SD, HB_PerfectBlockSD, HB_DamageBoostEffect, HB_PerfectBlockEffect, HB_PerfectBlockSpell 
     };
     
     if (const auto missing = std::ranges::count_if(forms, [](auto form) { return form == nullptr; }); missing > 0) {

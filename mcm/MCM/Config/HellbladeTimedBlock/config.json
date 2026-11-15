@@ -63,6 +63,17 @@
                 "sourceType": "ModSettingFloat"
             }
         },
+        {
+            "id": "bTimedBlockSoundEnabled:Settings",
+            "text": "Timed Block Sound",
+            "type": "toggle",
+            "groupCondition": 1,
+            "help": "Play an extra sound on a timed block. A perfect block plays its own sound instead.",
+            "valueOptions": {
+                "defaultValue": true,
+                "sourceType": "ModSettingBool"
+            }
+        },
         { 
             "text": "Perfect Block Options", 
             "type": "header",
@@ -121,6 +132,17 @@
                 "defaultValue": 0.4,
                 "formatString": "{2}",
                 "sourceType": "ModSettingFloat"
+            }
+        },
+        {
+            "id": "bPerfectBlockSoundEnabled:Settings",
+            "text": "Perfect Block Sound",
+            "type": "toggle",
+            "groupCondition": 2,
+            "help": "Play an extra sound on a perfect block.",
+            "valueOptions": {
+                "defaultValue": true,
+                "sourceType": "ModSettingBool"
             }
         },
         {

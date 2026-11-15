@@ -25,6 +25,7 @@ void Settings::ReadSettings() {
         ReadSettingFloat(ini, "Settings", "fTimedBlockSlowdownDuration", fTimedBlockSlowdownDuration);
         ReadSettingFloat(ini, "Settings", "fTimedBlockSlowdownMult", fTimedBlockSlowdownMult);
         ReadSettingFloat(ini, "Settings", "fTimedBlockWindow", fTimedBlockWindow);
+        ReadSettingBool(ini, "Settings", "bTimedBlockSoundEnabled", bTimedBlockSoundEnabled);
 
         Util::LimitLower(fTimedBlockSlowdownDuration, 0.f);
         Util::LimitLower(fTimedBlockSlowdownMult, 0.1f);
@@ -35,6 +36,7 @@ void Settings::ReadSettings() {
         ReadSettingFloat(ini, "Settings", "fPerfectBlockSlowdownDuration", fPerfectBlockSlowdownDuration);
         ReadSettingFloat(ini, "Settings", "fPerfectBlockSlowdownMult", fPerfectBlockSlowdownMult);
         ReadSettingFloat(ini, "Settings", "fPerfectBlockWindow", fPerfectBlockWindow);
+        ReadSettingBool(ini, "Settings", "bPerfectBlockSoundEnabled", bPerfectBlockSoundEnabled);
         
         Util::LimitLower(fPerfectBlockSlowdownDuration, 0.f);
         Util::LimitLower(fPerfectBlockSlowdownMult, 0.1f);
